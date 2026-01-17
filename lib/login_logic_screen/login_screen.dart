@@ -11,10 +11,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _userName = TextEditingController();
-  final TextEditingController _password = TextEditingController();
-  final TextEditingController _confirmPassword = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _userName = TextEditingController();
+  final _password = TextEditingController();
+  final _confirmPassword = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             key: _formKey,
             child: Consumer<LoginViewModel>(
@@ -76,8 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               : Icons.visibility,
                         ),
                       ),
-                      validator: (val) => provider.validateConfirmPassword(
-                          val, _password.text),
+                      validator: (val) =>
+                          provider.validateConfirmPassword(val, _password.text),
                     ),
                     const SizedBox(height: 20),
 
@@ -92,7 +92,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             SnackBar(
                               content: const Text(
                                 'Validation Passed! Form submitted successfully.',
-                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
                               backgroundColor: Colors.green.shade700,
                               duration: const Duration(seconds: 2),
@@ -102,7 +106,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               elevation: 6, // shadow
-                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 16,
+                              ),
                             ),
                           );
                         } else {
@@ -110,7 +117,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             SnackBar(
                               content: const Text(
                                 'Validation Failed! Please check your inputs.',
-                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
                               backgroundColor: Colors.red.shade700,
                               duration: const Duration(seconds: 2),
@@ -120,7 +131,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               elevation: 6,
-                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 16,
+                              ),
                             ),
                           );
 
@@ -129,11 +143,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: const Text('Submit'),
                     ),
-
-
                   ],
                 );
-              }
+              },
             ),
           ),
         ),
