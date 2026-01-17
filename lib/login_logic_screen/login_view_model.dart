@@ -33,7 +33,6 @@ class LoginViewModel extends ChangeNotifier {
     final hasLowercase = password.contains(RegExp(r'[a-z]'));
     final hasNumber = password.contains(RegExp(r'\d'));
     final hasSpecial = password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
-
     if (!hasUppercase) return 'Must contain at least one uppercase letter';
     if (!hasLowercase) return 'Must contain at least one lowercase letter';
     if (!hasNumber) return 'Must contain at least one number';
@@ -43,7 +42,8 @@ class LoginViewModel extends ChangeNotifier {
 
   // Confirm Password Validator
   String? validateConfirmPassword(String? confirmPassword, String password) {
-    if (confirmPassword == null || confirmPassword.isEmpty) return 'Confirm Password is required';
+    if (confirmPassword == null || confirmPassword.isEmpty)
+      return 'Confirm Password is required';
     if (confirmPassword != password) return 'Passwords do not match';
     return null;
   }

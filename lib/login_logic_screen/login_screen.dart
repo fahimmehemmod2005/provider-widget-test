@@ -87,10 +87,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           print('Email: ${_userName.text}');
                           print('Password: ${_password.text}');
                           print('Confirm Password: ${_confirmPassword.text}');
-
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: const Text(
+                              content: Text(
                                 'Validation Passed! Form submitted successfully.',
                                 style: TextStyle(
                                   fontSize: 16,
