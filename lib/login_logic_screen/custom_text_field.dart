@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
+class InputField extends StatelessWidget {
   final String hintText;
   final String label;
   final TextEditingController? controller;
@@ -8,7 +8,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final String? Function(String?)? validator;
 
-  const CustomTextField({
+  const InputField({
     super.key,
     required this.label,
     required this.hintText,
@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
             suffixIcon: suffixIcon,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Colors.black),
+              borderSide: BorderSide(color: Colors.green),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
@@ -46,7 +46,7 @@ class CustomTextField extends StatelessWidget {
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Colors.purple),
+              borderSide: BorderSide(color: Colors.grey),
             ),
           ),
         ),

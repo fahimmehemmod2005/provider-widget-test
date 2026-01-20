@@ -26,19 +26,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('Rebuild');
+    print('Screen build');
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             key: _formKey,
             child: Consumer<LoginViewModel>(
               builder: (context, provider, child) {
-                print('Widget Build');
+                print('Input field build');
                 return Column(
                   children: [
-                    CustomTextField(
+                    InputField(
                       label: 'Email',
                       hintText: 'Enter your email',
                       controller: _userName,
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 10),
 
-                    CustomTextField(
+                    InputField(
                       label: 'Password',
                       hintText: 'Enter your password',
                       controller: _password,
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 10),
 
-                    CustomTextField(
+                    InputField(
                       label: 'Confirm Password',
                       hintText: 'Confirm your password',
                       controller: _confirmPassword,

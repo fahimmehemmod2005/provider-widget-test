@@ -42,8 +42,9 @@ class LoginViewModel extends ChangeNotifier {
 
   // Confirm Password Validator
   String? validateConfirmPassword(String? confirmPassword, String password) {
-    if (confirmPassword == null || confirmPassword.isEmpty)
+    if (confirmPassword == null || confirmPassword.isEmpty) {
       return 'Confirm Password is required';
+    }
     if (confirmPassword != password) return 'Passwords do not match';
     return null;
   }
